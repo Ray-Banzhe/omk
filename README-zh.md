@@ -33,3 +33,12 @@ omk run <repo-url>
 - `--compose-file <compose-file>`: 指定 docker-compose.yml 路径(在包含 --dockerfile 时会被忽略)
 - `--build-command <build-command>`: 指定构建命令(在包含 --dockerfile 或 --compose-file 时会被忽略)
 - `--run-command <run-command>`: 指定运行命令(在包含 --dockerfile 或 --compose-file 时会被忽略)
+
+## 其他命令
+```bash
+# 指定账户密码，多次执行视为覆写操作
+omk account -u <username> -p <password>
+
+# 运行web服务，需要先设定用户名和密码
+omk server
+```

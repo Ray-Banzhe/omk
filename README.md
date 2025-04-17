@@ -33,3 +33,12 @@ Options:
 - `--compose-file <compose-file>`: specify the docker-compose.yml path
 - `--build-command <build-command>`: specify the build command
 - `--run-command <run-command>`: specify the run command
+
+## Other Command
+```bash
+# set account, use to login to web server
+omk account -u <username> -p <password>
+
+# run web server, need account first
+omk server
+```

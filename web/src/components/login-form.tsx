@@ -11,7 +11,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 
 const loginSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address" }),
+  username: z.string().min(1, { message: "Username is required" }),
   password: z.string().min(6, { message: "Password must be at least 6 characters" }),
 })
 
@@ -24,7 +24,7 @@ export function LoginForm() {
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   })
@@ -70,12 +70,12 @@ export function LoginForm() {
 
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="name@example.com" type="email" {...field} />
+                <Input placeholder="username" type="username" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -89,9 +89,6 @@ export function LoginForm() {
             <FormItem>
               <div className="flex items-center justify-between">
                 <FormLabel>Password</FormLabel>
-                <a href="#" className="text-sm text-primary hover:underline">
-                  Forgot password?
-                </a>
               </div>
               <FormControl>
                 <Input placeholder="••••••••" type="password" {...field} />
@@ -101,7 +98,7 @@ export function LoginForm() {
           )}
         />
 
-        <Button type="submit" className="w-full" disabled={isLoading}>
+        <Button type="submit" className="w-full mt-8" disabled={isLoading}>
           {isLoading ? "Signing in..." : "Sign in"}
         </Button>
       </form>

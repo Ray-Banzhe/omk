@@ -1,5 +1,5 @@
 ## Omk
-自托管容器 CI 平台，类似 Vercel CI 和 Pika Pod 的结合
+自托管容器 CI 平台，类似 Vercel CI 和 Pika Pod 的结合  
 
 ## 前提条件
 - Docker
@@ -7,8 +7,8 @@
 - Github Token (用于 fork 其他人的仓库和创建 webhook)
 - 你的服务器可以被 Github 访问
 
-## 如何工作
-当您运行 `omk run <repo-url>` 时，Omk 会：
+## Omk 是如何工作的?
+当您运行 `omk run <repo-url>` 时，Omk 会：  
 1. 检查您是否已登录到 Github
 2. 检查该仓库是否在您的名下：
   - 是：则继续
@@ -25,7 +25,7 @@
 ```bash
 omk run <repo-url>
 ```
-选项:
+选项:  
 - `-n, --name <app-name>`: 应用名称
 - `-b, --branch <branch>`: 指定分支
 - `-d, --description <app-description>`: 应用描述
